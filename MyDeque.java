@@ -25,6 +25,7 @@ public class MyDeque<E>{
   }
 
   public void addFirst(E element){
+    if(element == null) throw new NullPointerException();
     if(size!=0){
       if(size==data.length) resize();
       start = Math.floorMod(start-1,data.length);
@@ -35,6 +36,7 @@ public class MyDeque<E>{
   }
 
   public void addLast(E element){
+    if(element == null) throw new NullPointerException();
     if(size!=0){
       if(size==data.length) resize();
       end = Math.floorMod(end+1,data.length);
@@ -107,6 +109,7 @@ public class MyDeque<E>{
 
   public static void main(String args[]){
     MyDeque<Integer> d = new MyDeque<>();
+    d.addFirst(null);
     System.out.println(d);
     d.addFirst(new Integer(2));
     System.out.println(d);
