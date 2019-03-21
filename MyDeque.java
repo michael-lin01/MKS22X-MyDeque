@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class MyDeque<E>{
   private E[] data;
   private int size, start, end;
@@ -81,5 +83,13 @@ public class MyDeque<E>{
       ans+=data[i%size]+" ";
     }
     return ans.substring(0,ans.length()-1)+"}";
+  }
+
+  public String toStringDebug(){
+    return Arrays.toString(data);
+  }
+
+  public static void main(String args[]){
+    MyDeque d = new MyDeque();
   }
 }
