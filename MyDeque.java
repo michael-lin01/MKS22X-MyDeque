@@ -5,12 +5,7 @@ public class MyDeque<E>{
   private int size, start, end;
 
   public MyDeque(){
-    @SuppressWarnings("unchecked")
-    E[] d = (E[])new Object[10];
-    data = d;
-    size = 0;
-    start = 0;
-    end = 0;
+    this(10);
   }
 
   public MyDeque(int initialCapacity){
@@ -18,6 +13,8 @@ public class MyDeque<E>{
     E[] d = (E[])new Object[initialCapacity];
     data = d;
     size = 0;
+    start = 0;
+    end = 0;
   }
 
   public int size(){
@@ -108,7 +105,7 @@ public class MyDeque<E>{
   }
 
   public static void main(String args[]){
-    MyDeque<Integer> d = new MyDeque<>();
+    MyDeque<Integer> d = new MyDeque<>(40);
     //d.addFirst(null);
     System.out.println(d);
     d.addFirst(2);
@@ -130,6 +127,7 @@ public class MyDeque<E>{
     }
     System.out.println(d.getFirst());
     System.out.println(d.getLast());
+    System.out.println(d.size());
     System.out.println(d.toStringDebug());
   }
 }
