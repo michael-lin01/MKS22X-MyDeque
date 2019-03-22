@@ -109,14 +109,14 @@ public class MyDeque<E>{
 
   public static void main(String args[]){
     MyDeque<Integer> d = new MyDeque<>();
-    d.addFirst(null);
+    //d.addFirst(null);
     System.out.println(d);
-    d.addFirst(new Integer(2));
+    d.addFirst(2);
     System.out.println(d);
     System.out.println(d.toStringDebug());
     for(int i = 0; i < 20; i++){
-      if(i%2==1) d.addFirst(new Integer(i));
-      else d.addLast(new Integer(i));
+      if(i%2==1) d.addFirst(i);
+      else d.addLast(i);
       System.out.println(d);
       //System.out.println(d.toStringDebug());
     }
@@ -128,6 +128,8 @@ public class MyDeque<E>{
       System.out.println(d);
       //System.out.println(d.toStringDebug());
     }
+    System.out.println(d.getFirst());
+    System.out.println(d.getLast());
     System.out.println(d.toStringDebug());
   }
 }
