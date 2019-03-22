@@ -2,7 +2,7 @@ import java.util.*;
 
 public class MyDeque<E>{
   private E[] data;
-  private int size, start, end;
+  public int size, start, end;
 
   public MyDeque(){
     this(10);
@@ -107,6 +107,12 @@ public class MyDeque<E>{
   public static void main(String args[]){
     MyDeque<Integer> d = new MyDeque<>(40);
     //d.addFirst(null);
+    d.addLast(1);
+    d.removeFirst();
+    System.out.println(d.start);
+    System.out.println(d.end);
+
+    d.addLast(1);
     System.out.println(d);
     d.addFirst(2);
     System.out.println(d);
