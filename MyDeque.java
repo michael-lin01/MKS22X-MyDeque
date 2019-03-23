@@ -13,8 +13,6 @@ public class MyDeque<E>{
     E[] d = (E[])new Object[initialCapacity];
     data = d;
     size = 0;
-    start = 0;
-    end = 0;
   }
 
   public int size(){
@@ -27,6 +25,10 @@ public class MyDeque<E>{
       if(size==data.length) resize();
       start = Math.floorMod(start-1,data.length);
     }
+    else{
+      start = 0;
+      end = 0;
+    }
 
     data[start]=element;
     size++;
@@ -37,6 +39,10 @@ public class MyDeque<E>{
     if(size!=0){
       if(size==data.length) resize();
       end = Math.floorMod(end+1,data.length);
+    }
+    else{
+      start = 0;
+      end = 0;
     }
 
     data[end]=element;
@@ -108,9 +114,11 @@ public class MyDeque<E>{
     MyDeque<Integer> d = new MyDeque<>(40);
     //d.addFirst(null);
     d.addLast(1);
+    System.out.println("start "+d.start);
+    System.out.println("end "+d.end);
     d.removeFirst();
-    System.out.println(d.start);
-    System.out.println(d.end);
+    System.out.println("start "+d.start);
+    System.out.println("end "+d.end);
 
     d.addLast(1);
     System.out.println(d);
