@@ -2,7 +2,7 @@ import java.util.*;
 
 public class MyDeque<E>{
   private E[] data;
-  public int size, start, end;
+  private int size, start, end;
 
   public MyDeque(){
     this(10);
